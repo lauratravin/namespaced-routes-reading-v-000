@@ -12,10 +12,15 @@ Rails.application.routes.draw do
   # get '/admin/authors/create', to: 'authors#create'
   # get '/admin/comments/moderate', to: 'comments#moderate'
 
-#new code
-  scope '/admin' do
-   resources :stats, only: [:index]
-  end
+#new code widhout module
+  # scope '/admin' do
+  #  resources :stats, only: [:index]
+  # end
+
+#new code widh  module
+scope '/admin', module: 'admin' do
+ resources :stats, only: [:index]
+end
 
 
 
